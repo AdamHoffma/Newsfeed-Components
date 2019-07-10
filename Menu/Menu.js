@@ -9,7 +9,7 @@ let menuItems = [
   'Log Out'
 ];
 
-/* 
+/*
 
   Step 1: Write a function that will create a menu component as seen below:
 
@@ -18,6 +18,51 @@ let menuItems = [
       {each menu item as a list item}
     </ul>
   </div>
+*/
+
+const menuButton = document.querySelector(".menu-button")
+
+//menuItems.forEach(list => {
+  //menuButton.appendChild(menuComponent(list.array))
+//})
+
+menuButton.appendChild(menuComponent())
+  
+
+  function menuComponent (menuItems) {
+    const menu = document.createElement("div")
+    const unOrdered = document.createElement("ul")
+    //const students = document.createElement("li")
+    //const faculty = document.createElement("li")
+    //const whatNew = document.createElement("li")
+    //const tech = document.createElement("li")
+    //const music = document.createElement("li")
+    //const logOut = document.createElement("li")
+
+    menuItems.forEach(list => {
+      document.createElement("li")
+    })
+
+    menu.appendChild(unOrdered)
+    //unOrdered.appendChild(students)
+    //unOrdered.appendChild(faculty)
+    //unOrdered.appendChild(whatNew)
+    //unOrdered.appendChild(tech)
+    //unOrdered.appendChild(music)
+    //unOrdered.appendChild(logOut)
+    unOrdered.appendChild(list)
+
+    menu.classList.add('.menu')
+
+
+    menuButton.addEventListener('click', event => {
+      menu.classList.toggle('menu--open')
+
+      return menu
+    })
+  }
+
+/*
 
   Pass the function an array as it's only argument.
 

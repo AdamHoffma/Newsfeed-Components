@@ -104,6 +104,25 @@ const data = [
           wordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswords
           wordswordswordswordswordswowordswordswordswordsrdswordswordswordswordswordswords`
 
+  }, 
+  {
+    title: 'This is the New Article I am adding',
+    date: 'Today',
+    firstParagraph: `words wordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswords
+          wordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswords
+          wordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswords
+          wordswordswordswordswordswowordswordswordswordsrdswordswordswordswordswordswords`,
+
+    secondParagraph: `words wordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswords
+          wordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswords
+          wordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswords
+          wordswordswordswordswordswowordswordswordswordsrdswordswordswordswordswordswords`,
+
+    thirdParagraph: `words wordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswords
+          wordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswords
+          wordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswords
+          wordswordswordswordswordswowordswordswordswordsrdswordswordswordswordswordswords`
+
   } 
 ];
 
