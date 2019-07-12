@@ -20,46 +20,37 @@ let menuItems = [
   </div>
 */
 
-const menuButton = document.querySelector(".menu-button")
+const menuButton = document.querySelector(".header")
+
+console.log(menuButton)
 
 //menuItems.forEach(list => {
   //menuButton.appendChild(menuComponent(list.array))
 //})
 
-menuButton.appendChild(menuComponent())
-  
+menuButton.appendChild(menuComponent(menuItems))  
 
   function menuComponent (menuItems) {
     const menu = document.createElement("div")
-    const unOrdered = document.createElement("ul")
-    //const students = document.createElement("li")
-    //const faculty = document.createElement("li")
-    //const whatNew = document.createElement("li")
-    //const tech = document.createElement("li")
-    //const music = document.createElement("li")
-    //const logOut = document.createElement("li")
+    const unOrdered = document.createElement("ul") 
+  
+    menu.appendChild(unOrdered)    
 
     menuItems.forEach(list => {
-      document.createElement("li")
+      const items = document.createElement("li")
+      items.textContent = list
+      unOrdered.appendChild(items)
+      
     })
-
-    menu.appendChild(unOrdered)
-    //unOrdered.appendChild(students)
-    //unOrdered.appendChild(faculty)
-    //unOrdered.appendChild(whatNew)
-    //unOrdered.appendChild(tech)
-    //unOrdered.appendChild(music)
-    //unOrdered.appendChild(logOut)
-    unOrdered.appendChild(list)
-
-    menu.classList.add('.menu')
-
+    
+    menu.classList.add('menu')
+    menuButton.classList.add('menu-button')
 
     menuButton.addEventListener('click', event => {
+      console.log("")      
       menu.classList.toggle('menu--open')
-
-      return menu
     })
+    return menu
   }
 
 /*
