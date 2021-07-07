@@ -85,7 +85,45 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+  {
+    title: 'This is the New Article I am adding',
+    date: 'Today',
+    firstParagraph: `words wordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswords
+          wordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswords
+          wordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswords
+          wordswordswordswordswordswowordswordswordswordsrdswordswordswordswordswordswords`,
+
+    secondParagraph: `words wordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswords
+          wordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswords
+          wordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswords
+          wordswordswordswordswordswowordswordswordswordsrdswordswordswordswordswordswords`,
+
+    thirdParagraph: `words wordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswords
+          wordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswords
+          wordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswords
+          wordswordswordswordswordswowordswordswordswordsrdswordswordswordswordswordswords`
+
+  }, 
+  {
+    title: 'This is the New Article I am adding',
+    date: 'Today',
+    firstParagraph: `words wordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswords
+          wordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswords
+          wordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswords
+          wordswordswordswordswordswowordswordswordswordsrdswordswordswordswordswordswords`,
+
+    secondParagraph: `words wordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswords
+          wordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswords
+          wordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswords
+          wordswordswordswordswordswowordswordswordswordsrdswordswordswordswordswordswords`,
+
+    thirdParagraph: `words wordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswords
+          wordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswords
+          wordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswords
+          wordswordswordswordswordswowordswordswordswordsrdswordswordswordswordswordswords`
+
+  } 
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
@@ -98,7 +136,47 @@ const data = [
 
     <span class='expandButton'></span>
   </div>
+*/
 
+  const newsFeed = document.querySelector('.articles')
+  data.forEach(info => {
+    newsFeed.appendChild(createComponent(info.title, info.date, info.firstParagraph, info.secondParagraph, info.thirdParagraph))
+  })
+
+  function createComponent(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+    const article = document.createElement('div')
+    const titles = document.createElement("h2")
+    const dates = document.createElement("p")
+    const P1 = document.createElement("p")
+    const P2 = document.createElement("p")
+    const P3 = document.createElement("p")
+    const button = document.createElement("span")
+
+    article.appendChild(titles)
+    article.appendChild(dates)
+    article.appendChild(P1)
+    article.appendChild(P2)
+    article.appendChild(P3)
+    article.appendChild(button)
+
+    article.classList.add("article")
+    dates.classList.add("date")
+    button.classList.add("expandButton")
+
+    button.textContent = "Expand"
+    titles.textContent = title
+    dates.textContent = date
+    P1.textContent = firstParagraph
+    P2.textContent = secondParagraph
+    P3.textContent = thirdParagraph
+
+    button.addEventListener("click", event => {
+      article.classList.toggle('article-open')
+    })
+
+    return article 
+  }
+/*
   Hint: You will need to use createElement more than once here!
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each peice of the data object above.
